@@ -25,13 +25,15 @@ class PlaylistsService {
     const songs = resultSongs.rows;
 
     return {
-      id: playlist.id,
-      name: playlist.name,
-      songs: songs.map((song) => ({
-        id: song.id,
-        title: song.title,
-        performer: song.performer,
-      })),
+      playlist: {
+        id: playlist.id,
+        name: playlist.name,
+        songs: songs.map((song) => ({
+          id: song.id,
+          title: song.title,
+          performer: song.performer,
+        })),
+      }
     };
   }
 }
